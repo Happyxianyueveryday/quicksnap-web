@@ -51,13 +51,23 @@
   本项目的项目结构如下所示，需要注意的是，此处只展示了重要的源代码部分。
   
   
+  
   ## 4. flask基本设计思想
   
   ### A. ORM的基本思想
+  ORM
   
   ### B. MVC设计模式
+  MVC是一种经典的web应用软件开发和组织思想。
+  ![avatar](https://github.com/Happyxianyueveryday/Computer-Vision-demo/blob/master/Demo_2/pics/MVC.png)
   
-  ### C. flask的MTV设计模式
+  MVC中的V代表View，即视图层；C代表Controller，即控制器；M代表Model，即模型，是底层的数据库。三部分组件的基本功能如下。
+  
+  下面以本项目为例，分析一下
+  
+  ### C. flask的变形版MVC——MTV设计模式
+  具体到flask后端框架，它使用的设计模式是MTV，这是一种变形版的MVC。
+   ![avatar](https://github.com/Happyxianyueveryday/Computer-Vision-demo/blob/master/Demo_2/pics/MTV.png)
  
   
   ## 5. 安全性策略
