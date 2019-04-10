@@ -55,7 +55,38 @@
   ## 4. flask基本设计思想
   
   ### A. ORM的基本思想
-  ORM
+  ORM全称是：Object Relational Mapping(对象关系映射)，其概念是是将关系型数据库中的表和面向对象程序设计中的对象联系起来，具体而言：
+  
+  > ORM将关系型数据库中的一个表和面向对象程序中的一个类对应，将表中的一个属性和类中的一个成员变量对应。
+  
+  例如下面的sql代码和python代码等价。
+  
+  ```
+  create table Post       
+  (
+    id integer,     
+    body varchar(160),  
+    time timestamp,      
+    user_id integer,
+    
+    create view function 
+    (
+      ...
+    )
+  );
+  ```
+  
+  ```
+  class Post(db.Model):
+    id = db.Column(db.Integer, primary_key = True)                              
+    body = db.Column(db.String(160))                                            
+    time = db.Column(db.DateTime, index=True)
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id'))                   
+    
+    def function(self):
+      pass
+    
+  ```
   
   ### B. MVC设计模式
   MVC是一种经典的web应用软件开发和组织思想。
@@ -82,9 +113,9 @@
   具体到本项目，我们以删除一条已经发送的微博来展示整个flask架构的MTV设计模式是如何工作的，我们假设web应用仅在本机上运行，端口号为5000 (localhost:5000)：
   (1) 用户点击删除微博的按钮，发送一个url：'localhost:5000/delweibo/id=1'，这里的'/delweibo'指明了要删除功能，'/id=1'指定了要删除的微博的id
   (2) 控制器(Controller)的工作：根据用户点击时发送的url，匹配到视图view.py中的一个视图函数delweibo，将要删除的id作为参数传递给视图函数delweibo。
-  (3) 视图(View)的工作：视图部分做最多的处理工作，在视图中的视图函数delweibo被调用后，需要首先检查删除操作的合法性（
-  (4) 模型(Model)的工作：
-  (5) 模板(Templates)的工作：
+  (3) 视图(View)的工作：视图部分做最多的处理工作，在视图中的视图函数delweibo被调用后，需要首先检查删除操作的合法性（用户需要登录，用户仅能删除自己的微博），若删除操作合法，则向模型发送指令，指示模型删除微博，并将删除成功的提示信息交付给模板'app/templates/base_navigation_bar.html'进行显示。
+  (4) 模型(Model)的工作：flask中的模型就是sqlalchemy，sqlalchemy收到来自视图的删除指令后，联系底层数据库删除id为1的微博记录。
+  (5) 模板(Templates)的工作：模板文件'app/templates/base_navigation_bar.html'负责显示视图层反馈的提示信息。
  
   
   ## 5. 安全性策略
