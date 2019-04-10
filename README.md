@@ -3,15 +3,14 @@
 
 ## 1. 构建和运行
   ### Step 1：安装本项目所依赖的库：
+  本项目主要基于flask实现后端，使用vue+boostrap实现前端。项目本身的运行和部署需要使用下面的第三方库。
   
   ```
   $ pip install flask
   $ pip install flask-login
   $ pip install flask-openid
-  $ pip install flask-mail
   $ pip install flask-sqlalchemy
   $ pip install sqlalchemy-migrate
-  $ pip install flask-whooshalchemy
   $ pip install flask-wtf
   $ pip install flask-babel
   $ pip install guess_language
@@ -30,7 +29,14 @@
   ```
   
   ### Step 4: 启动任意浏览器访问本机
-  启动浏览器，地址栏输入"http://localhost:5000" 并访问。
+  启动浏览器，地址栏输入"http://localhost:5000" 并访问，即完成本web版微博的运行，如下图所示。
+  ![avatar](https://github.com/Happyxianyueveryday/Computer-Vision-demo/blob/master/Demo_2/pics/QQ%E6%88%AA%E5%9B%BE20190410204225.png)
+ 
+  ## 2. 项目结构
+  项目结构如下
+  
+  
+  
   
   
   
