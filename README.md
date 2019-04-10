@@ -59,15 +59,28 @@
   
   ### B. MVC设计模式
   MVC是一种经典的web应用软件开发和组织思想。
+  
   ![avatar](https://github.com/Happyxianyueveryday/Computer-Vision-demo/blob/master/Demo_2/pics/MVC.png)
   
   MVC中的V代表View，即视图层；C代表Controller，即控制器；M代表Model，即模型，是底层的数据库。三部分组件的基本功能如下。
-  
-  下面以本项目为例，分析一下
+  (1) 视图(View)：是指用户看到并与之交互的html界面，视图只负责如何显示从控制器得到的结果数据。
+  (2) 控制器(Controller)：控制器接受用户的输入并调用模型中的视图去完成用户的需求，控制器本身不输出任何东西和做任何处理。它只是接收请求并决定调用哪个模型构件去处理请求，然后再确定用哪个视图来显示返回的数据。
+  (3) 模型(Model)：模型表示业务规则，底层和数据库直接相连。在MVC的三个部件中，模型拥有最多的处理任务。被模型返回的数据是中立的，模型与数据格式无关，这样一个模型能为多个视图提供数据，由于应用于模型的代码只需写一次就可以被多个视图重用，所以减少了代码的重复性。
   
   ### C. flask的变形版MVC——MTV设计模式
   具体到flask后端框架，它使用的设计模式是MTV，这是一种变形版的MVC。
+  
    ![avatar](https://github.com/Happyxianyueveryday/Computer-Vision-demo/blob/master/Demo_2/pics/MTV.png)
+   
+  MTV中的M代表模型(Models)，对应于这个项目中的'/app/model.py'文件；T代表模板(Templates)，对应于这个项目中的'app/templates/'文件夹；V代表视图(Views)，对应于这个项目中的'app/views.py'文件。三个部分的具体功能如下所示。
+  (1) 模型(Models)：
+  (2) 模板(Templates)：
+  (3) 视图(Views)：
+  
+  
+  具体到本项目，我们以删除一条已经发送的微博来展示整个flask架构的MTV设计模式是如何工作的，我们假设web应用仅在本机上运行，端口号为5000 (localhost:5000)：
+  (1) 用户点击删除微博的按钮，发送一个url：'localhost:5000/delweibo/id=1'，这里的'/delweibo'指明了要删除功能，'/id=1'指定了要删除的微博的id
+  (2) 控制器工作：根据用户点击时发送的url，匹配到视图view.py中的一个视图函数delweibo，将要删除的id
  
   
   ## 5. 安全性策略
