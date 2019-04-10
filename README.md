@@ -72,19 +72,25 @@
   
    ![avatar](https://github.com/Happyxianyueveryday/Computer-Vision-demo/blob/master/Demo_2/pics/MTV.png)
    
-  MTV中的M代表模型(Models)，对应于这个项目中的'/app/model.py'文件；T代表模板(Templates)，对应于这个项目中的'app/templates/'文件夹；V代表视图(Views)，对应于这个项目中的'app/views.py'文件。三个部分的具体功能如下所示。
+  MTV中的M代表模型(Models)，对应于这个项目中的'/app/model.py'文件；T代表模板(Templates)，对应于这个项目中的'app/templates/'文件夹；V代表视图(Views)，对应于这个项目中的'app/views.py'文件。另外还有一个额外的部件为控制器(Controller)，四个部分的具体功能如下所示。
   (1) 模型(Models)：
   (2) 模板(Templates)：
   (3) 视图(Views)：
+  (4) 控制器(Controller)：
   
   
   具体到本项目，我们以删除一条已经发送的微博来展示整个flask架构的MTV设计模式是如何工作的，我们假设web应用仅在本机上运行，端口号为5000 (localhost:5000)：
   (1) 用户点击删除微博的按钮，发送一个url：'localhost:5000/delweibo/id=1'，这里的'/delweibo'指明了要删除功能，'/id=1'指定了要删除的微博的id
-  (2) 控制器工作：根据用户点击时发送的url，匹配到视图view.py中的一个视图函数delweibo，将要删除的id
+  (2) 控制器(Controller)的工作：根据用户点击时发送的url，匹配到视图view.py中的一个视图函数delweibo，将要删除的id作为参数传递给视图函数delweibo。
+  (3) 视图(View)的工作：视图部分做最多的处理工作，在视图中的视图函数delweibo被调用后，需要首先检查删除操作的合法性（
+  (4) 模型(Model)的工作：
+  (5) 模板(Templates)的工作：
  
   
   ## 5. 安全性策略
- 
+  
+  本项目中的安全性主要分为三个部分：密码安全性，url安全性，表单安全性。
+  
   ### A. 密码安全性
   
   ### B. url安全性
