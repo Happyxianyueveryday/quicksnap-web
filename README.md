@@ -33,7 +33,7 @@
   ![avatar](https://github.com/Happyxianyueveryday/Computer-Vision-demo/blob/master/Demo_2/pics/QQ%E6%88%AA%E5%9B%BE20190410204225.png)
   
   ### Step 5：直接访问网址
-  除了在本地构建和运行外，也可以直接访问该项目的网址，该项目由github进行托管： 
+  除了在本地构建和运行外，也可以直接访问该项目的网址，该项目由hekoru进行托管： 
   
   ## 2. 基本功能
   本项目较为全面地实现了基本的微博功能，包括：
