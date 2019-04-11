@@ -49,12 +49,17 @@
   本项目的项目结构如下所示，需要注意的是，此处只展示了重要的源代码部分。
   
   ```
-  app--|
-       |-- templates: 包含flask的模板(templates)文件
-       |-- __init__.py: 初始化文件
-       |-- forms.py: flask表单文件
-       |-- models.py: flask模型文件
-       |-- view.py: flask视图层文件
+  / -- |-- db_create.py: 数据库新建脚本
+       |-- db_migrate.py: 数据库迁移脚本（使用方法：先迁移后更新）
+       |-- db_update.py: 数据库更新脚本（使用方法：先迁移后更新）
+       |-- config.py: 项目配置文件
+       |-- run.py: 可执行脚本文件，直接执行该文件即可运行本项目
+       |-- app --|
+                 |-- templates: 包含flask的模板(templates)文件
+                 |-- __init__.py: 初始化文件
+                 |-- forms.py: flask表单文件
+                 |-- models.py: flask模型文件
+                 |-- view.py: flask视图层文件
   ```
   
   
