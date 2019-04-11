@@ -32,8 +32,6 @@
   启动浏览器，地址栏输入"http://localhost:5000" 并访问，即完成本web版微博的运行，如下图所示。
   ![avatar](https://github.com/Happyxianyueveryday/Computer-Vision-demo/blob/master/Demo_2/pics/QQ%E6%88%AA%E5%9B%BE20190410204225.png)
   
-  ### Step 5：直接访问网址
-  除了在本地构建和运行外，也可以直接访问该项目的网址，该项目由hekoru进行托管： 
   
   ## 2. 基本功能
   本项目较为全面地实现了基本的微博功能，包括：
@@ -104,7 +102,7 @@
    ![avatar](https://github.com/Happyxianyueveryday/Computer-Vision-demo/blob/master/Demo_2/pics/MTV.png)
    
   MTV中的M代表模型(Models)，对应于这个项目中的'/app/model.py'文件；T代表模板(Templates)，对应于这个项目中的'app/templates/'文件夹；V代表视图(Views)，对应于这个项目中的'app/views.py'文件。另外还有一个额外的部件为控制器(Controller)，四个部分的具体功能如下所示。
-  (1) 模型(Models)：
+  (1) 模型(Models)：flask中的模型使用sqlachemey和底层数据库相联系，常见
   (2) 模板(Templates)：
   (3) 视图(Views)：
   (4) 控制器(Controller)：
@@ -123,6 +121,7 @@
   本项目中的安全性主要分为三个部分：密码安全性，url安全性，表单安全性。
   
   ### A. 密码安全性
+  考虑到密码可能泄露的问题，用户的密码不应当直接储存在
   
   ### B. url安全性
   
