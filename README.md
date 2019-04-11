@@ -102,9 +102,9 @@
    ![avatar](https://github.com/Happyxianyueveryday/Computer-Vision-demo/blob/master/Demo_2/pics/MTV.png)
    
   MTV中的M代表模型(Models)，对应于这个项目中的'/app/model.py'文件；T代表模板(Templates)，对应于这个项目中的'app/templates/'文件夹；V代表视图(Views)，对应于这个项目中的'app/views.py'文件。另外还有一个额外的部件为控制器(Controller)，四个部分的具体功能如下所示。
-  (1) 模型(Models)：flask中的模型使用sqlachemey和底层数据库相联系，常见
-  (2) 模板(Templates)：
-  (3) 视图(Views)：
+  (1) 模型(Models)：flask中的模型使用sqlachemey和底层数据库相联系，负责数据库的增删改查。
+  (2) 模板(Templates)：flask中的模板负责从视图接受数据，并通过jinja2引擎渲染出用户页面呈现给用户。
+  (3) 视图(Views)：flask中的视图从
   (4) 控制器(Controller)：
   
   
@@ -121,11 +121,28 @@
   本项目中的安全性主要分为三个部分：密码安全性，url安全性，表单安全性。
   
   ### A. 密码安全性
-  考虑到密码可能泄露的问题，用户的密码不应当直接储存在
+  考虑到密码可能泄露的问题，用户的密码不应当直接储存在服务器上，而是需要使用Hash函数，利用Hash函数极低碰撞概率和不可还原的特性，仅将服务器的密码的hash值储存在服务器，而在用户登录需要验证密码的时候，先在本地计算密码的hash值，然后将hash值发送给服务器，在服务器中将用户输入的密码的hash值和服务器存储的正确密码的hash值进行比对来判断正确性。
   
   ### B. url安全性
+  url是用户发起请求的重要手段，一个web应用应该足够安全能够抵抗非法url请求。例如用户试图在没有登录的情况下访问自己的主页，一个已经登录的用户视图使用url删除其他用户的微博等。对于上述问题，我们使用如下的两种手段进行安全性控制。
+  
+  + 1. 登录控制：用户试图通过url访问一些敏感功能时，需要首先要求用户进行登录，在flask中有以下的三种实现方式。
+  
+  ```
+  if current_user.is_authenticated:
+    flash('已经进行登录')
+  else:
+    flash('尚未进行登录')
+  ```
+  
+  ```
+  @login_required
+  ```
+  
+  + 2. url逻辑控制：在每一个url对应的视图函数中
   
   ### C. 表单安全性
+  url的安全性和常见
   
   
   
