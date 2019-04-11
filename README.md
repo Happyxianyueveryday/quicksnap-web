@@ -47,7 +47,12 @@
  
   ## 3. 项目结构
   本项目的项目结构如下所示，需要注意的是，此处只展示了重要的源代码部分。
-  
+  app--|
+       |-- templates: 包含flask的模板(templates)文件
+       |-- __init__.py: 初始化文件
+       |-- forms.py: flask表单文件
+       |-- models.py: flask模型文件
+       |-- view.py: flask视图层文件
   
   
   ## 4. flask基本设计思想
