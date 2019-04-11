@@ -105,7 +105,7 @@
   ![avatar](https://github.com/Happyxianyueveryday/Computer-Vision-demo/blob/master/Demo_2/pics/MVC.png)
   
   MVC中的V代表View，即视图层；C代表Controller，即控制器；M代表Model，即模型，是底层的数据库。三部分组件的基本功能如下。  
-  (1) 视图(View)：是指用户看到并与之交互的html界面，视图只负责如何显示从控制器得到的结果数据。  
+  (1) 视图(View)：是指用户看到并与之交互的html界面，视图只负责如何显示从控制器得到的结果数据。    
   (2) 控制器(Controller)：控制器接受用户的输入并调用模型中的视图去完成用户的需求，控制器本身不输出任何东西和做任何处理。它只是接收请求并决定调用哪个模型构件去处理请求，然后再确定用哪个视图来显示返回的数据。  
   (3) 模型(Model)：模型表示业务规则，底层和数据库直接相连。在MVC的三个部件中，模型拥有最多的处理任务。被模型返回的数据是中立的，模型与数据格式无关，这样一个模型能为多个视图提供数据，由于应用于模型的代码只需写一次就可以被多个视图重用，所以减少了代码的重复性。  
   
@@ -117,15 +117,15 @@
   MTV中的M代表模型(Models)，对应于这个项目中的'/app/model.py'文件；T代表模板(Templates)，对应于这个项目中的'app/templates/'文件夹；V代表视图(Views)，对应于这个项目中的'app/views.py'文件。另外还有一个额外的部件为控制器(Controller)，四个部分的具体功能如下所示。  
   (1) 模型(Models)：flask中的模型使用sqlachemey和底层数据库相联系，负责从视图接受操作指令，然后根据指令进行数据库的增删改查。  
   (2) 模板(Templates)：flask中的模板负责从视图接受数据，并通过jinja2引擎渲染出用户页面呈现给用户。  
-  (3) 视图(Views)：flask中的视图负责收到用户的请求后，拥有最多的处理任务，需要对请求的合法性进行检查，然后从向模型发出操作指令。
+  (3) 视图(Views)：flask中的视图负责收到用户的请求后，拥有最多的处理任务，需要对请求的合法性进行检查，然后从向模型发出操作指令。  
   (4) 控制器(Controller)： flask中的控制器仅负责进行路由，不做任何的逻辑处理，将一个url映射到一个视图函数上。
 
   
   具体到本项目，我们以删除一条已经发送的微博来展示整个flask架构的MTV设计模式是如何工作的，我们假设web应用仅在本机上运行，端口号为5000 (localhost:5000)：
-  (1) 用户点击删除微博的按钮，发送一个url：'localhost:5000/delweibo/id=1'，这里的'/delweibo'指明了要删除功能，'/id=1'指定了要删除的微博的id  
-  (2) 控制器(Controller)的工作：根据用户点击时发送的url，匹配到视图view.py中的一个视图函数delweibo，将要删除的id作为参数传递给视图函数delweibo。   (3) 视图(View)的工作：视图部分做最多的处理工作，在视图中的视图函数delweibo被调用后，需要首先检查删除操作的合法性（用户需要登录，用户仅能删除自己的微博），若删除操作合法，则向模型发送指令，指示模型删除微博，并将删除成功的提示信息交付给模板'app/templates/base_navigation_bar.html'进行显示。  
-  (4) 模型(Model)的工作：flask中的模型就是sqlalchemy，sqlalchemy收到来自视图的删除指令后，联系底层数据库删除id为1的微博记录。  
-  (5) 模板(Templates)的工作：模板文件'app/templates/base_navigation_bar.html'负责显示视图层反馈的提示信息。  
+  (1) 用户点击删除微博的按钮，发送一个url：'localhost:5000/delweibo/id=1'，这里的'/delweibo'指明了要删除功能，'/id=1'指定了要删除的微博的id   
+  (2) 控制器(Controller)的工作：根据用户点击时发送的url，匹配到视图view.py中的一个视图函数delweibo，将要删除的id作为参数传递给视图函数delweibo。     (3) 视图(View)的工作：视图部分做最多的处理工作，在视图中的视图函数delweibo被调用后，需要首先检查删除操作的合法性（用户需要登录，用户仅能删除自己的微博），若删除操作合法，则向模型发送指令，指示模型删除微博，并将删除成功的提示信息交付给模板'app/templates/base_navigation_bar.html'进行显示。    
+  (4) 模型(Model)的工作：flask中的模型就是sqlalchemy，sqlalchemy收到来自视图的删除指令后，联系底层数据库删除id为1的微博记录。    
+  (5) 模板(Templates)的工作：模板文件'app/templates/base_navigation_bar.html'负责显示视图层反馈的提示信息。    
  
   
   ## 5. 安全性策略
