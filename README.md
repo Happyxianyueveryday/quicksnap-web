@@ -1,4 +1,4 @@
-# QuickSnap-web
+# quicksnap-web
 基于flask的简易微博web应用
 
 ## 1. 构建和运行
