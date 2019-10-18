@@ -44,9 +44,11 @@
   本项目同样含有部分的功能尚待完成，即首页的推荐功能。前端使用Vue，同时具有移动端和pc端两份版本。
   
   pc端主页面：
+  
   ![avatar](https://github.com/Happyxianyueveryday/Computer-Vision-demo/blob/master/Demo_2/pics/QQ%E6%88%AA%E5%9B%BE20190410204225.png)
   
-  移动端主页面和微博内容页面：
+  移动端主页面和微博内容页面：  
+  
   ![avatar](https://github.com/Happyxianyueveryday/quicksnap-web/blob/master/pics/QQ%E6%88%AA%E5%9B%BE20190914005037.png)
   ![avatar](https://github.com/Happyxianyueveryday/quicksnap-web/blob/master/pics/QQ%E6%88%AA%E5%9B%BE20190914005119.png)
   
@@ -63,7 +65,6 @@
        |-- config.py: 项目配置文件
        |-- run.py: 可执行脚本文件，直接执行该文件即可运行本项目
        |-- app --|
-                 |-- templates: 包含flask的模板(templates)文件
                  |-- __init__.py: 初始化文件
                  |-- forms.py: flask表单文件
                  |-- models.py: flask模型文件
