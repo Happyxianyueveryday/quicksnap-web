@@ -29,8 +29,7 @@
   ```
   
   ### Step 4: 启动任意浏览器访问本机
-  启动浏览器，地址栏输入"http://localhost:5000" 并访问，即完成本web版微博的运行，如下图所示。
-  ![avatar](https://github.com/Happyxianyueveryday/Computer-Vision-demo/blob/master/Demo_2/pics/QQ%E6%88%AA%E5%9B%BE20190410204225.png)
+  启动浏览器，地址栏输入"http://localhost:5000" 并访问，即完成本web版微博的运行。
   
   
   ## 2. 基本功能
@@ -42,7 +41,16 @@
   + 关注，取消关注用户
   + 生成关注用户的微博动态
   
-  本项目同样含有部分的功能尚待完成，即首页的推荐功能，该功能目前不可用，目前计划在下一个版本中结合个人在实验室的另一个项目——基于同态加密的分布式协同过滤系统进行更新。
+  本项目同样含有部分的功能尚待完成，即首页的推荐功能。前端使用Vue，同时具有移动端和pc端两份版本。
+  
+  pc端主页面：
+  ![avatar](https://github.com/Happyxianyueveryday/Computer-Vision-demo/blob/master/Demo_2/pics/QQ%E6%88%AA%E5%9B%BE20190410204225.png)
+  
+  移动端主页面和微博内容页面：
+  ![avatar](https://github.com/Happyxianyueveryday/quicksnap-web/blob/master/pics/QQ%E6%88%AA%E5%9B%BE20190914005037.png)
+  ![avatar](https://github.com/Happyxianyueveryday/quicksnap-web/blob/master/pics/QQ%E6%88%AA%E5%9B%BE20190914005119.png)
+  
+  
   
  
   ## 3. 项目结构
